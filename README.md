@@ -27,6 +27,12 @@ git clone git@github.com:ohtap/subcorpora-tool.git
 # Enter into the subcorpora-tool directory
 cd subcorpora-tool
 ```
+You can also navigate to the link above and hit the button that says "Code"
+
+Then click download ZIP to download a ZIP file with all the code
+
+### Downloading Other Programs
+You will need to download Node.js (which can be done at https://nodejs.org/en/) as well as all of the python packages in ```requirements.txt```
 
 ### Installing the Node modules
 
