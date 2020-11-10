@@ -84,7 +84,7 @@ python src/tool_script_test.py
 
 ## Results
 
-Results will be displayed on the winnow interface. On top of that, csv files wil appear in the folder listing. There will be one for each keyword giving usage over time. Another will give you the number of uses of each word. The final will give you demographic data for all interviews that had one of the keywords. Remember that Winnow often turns up false positives, and the data in these csv files is the same. Should not be used beyond as a preliminary summary. 
+Results will be displayed on the winnow interface. On top of that, csv files will appear in the folder listing. There will be one for each keyword giving usage over time. Another will give you the number of uses of each word. The final will give you demographic data for all interviews that had one of the keywords. Remember that Winnow often turns up false positives, and the data in these csv files is the same. Should not be used beyond as a preliminary summary. 
 
 ## Directory structure
 ```
