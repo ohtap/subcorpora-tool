@@ -1,3 +1,4 @@
 pandas
 nltk
 unidecode
+bs4
