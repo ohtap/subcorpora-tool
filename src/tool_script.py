@@ -234,7 +234,7 @@ def get_included_files(collections, df1, df2, runJSON):
 		# interviewee we want to add!
 		interviewees_list= r["interviewee_ids"].split(";")
 		for j in interviewees_list:
-			info= interviewee_id_to_metadata[j]
+			info= interviewee_id_to_metadata[j.strip()]
 			if j==0:
 				continue
 			interviewee_name = interviewee_id_to_metadata["interviewee_name"]
