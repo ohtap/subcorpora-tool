@@ -223,7 +223,7 @@ def get_included_files(collections, df1, df2, runJSON):
 					continue
 
 
-		
+
 
 		# If the current interviewee is non-male and the interview has a male, mark it
 		if f in male_interviews[curr_c]:
@@ -261,7 +261,7 @@ def get_included_files(collections, df1, df2, runJSON):
 			interviewee_metadata_all_collections["race"][curr_person["identified_race"]] += 1
 			interviewee_metadata_all_collections["sex"][curr_person["sex"]] += 1
 			interviewee_metadata_all_collections["birth_country"][curr_person["birth_country"]] += 1
-			
+
 			files_for_inclusion[curr_c][f] = 1
 
 			date_of_first_interview = r["date_of_first_interview"]
@@ -296,7 +296,7 @@ def get_included_files(collections, df1, df2, runJSON):
 	runJSON["summary-report"]["sex"] = interviewee_metadata_all_collections["sex"]
 	runJSON["summary-report"]["education"] = interviewee_metadata_all_collections["education"]
 	runJSON["summary-report"]["birth_country"] = interviewee_metadata_all_collections["birth_country"]
-	
+
 	metadata = {
 		"files_for_inclusion": files_for_inclusion,
 		"people": people,
