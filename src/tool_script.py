@@ -2,20 +2,20 @@
 # otherwise double-counted into counts).
 
 from collections import defaultdict
-from collections import OrderedDict
+#from collections import OrderedDict
 import os
 import pandas as pd
 import re
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+# import nltk
+# from nltk.corpus import stopwords
+# from nltk.tokenize import word_tokenize
 import string
-from unidecode import unidecode
+# from unidecode import unidecode
 import csv
-from bs4 import BeautifulSoup, Tag
+# from bs4 import BeautifulSoup, Tag
 import sys
 import json
-import csv
+#import csv
 
 NUM_TOP_WORDS = 20 # The number of top words that we want from each file
 CONTEXT_WORDS_AROUND = 50
