@@ -22,6 +22,7 @@ import AssessmentRoundedIcon from '@material-ui/icons/AssessmentRounded';
 import DescriptionRoundedIcon from '@material-ui/icons/DescriptionRounded';
 import loadable from '@loadable/component';
 import Typography from '@material-ui/core/Typography';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { Route, BrowserRouter, Link } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -139,6 +140,7 @@ class DefaultLayout extends React.Component {
             </Typography>
           </Toolbar>
         </AppBar>
+        <ClickAwayListener onClickAway={this.handleDrawerClose}>
         <Drawer
           className={classes.drawer}
           variant="persistent"
@@ -154,7 +156,7 @@ class DefaultLayout extends React.Component {
             </IconButton>
           </div>
           <Divider />
-          <List>
+          <List onClick={this.handleDrawerClose}>
             <ListItem button key='Home' component={Link} to='/'>
               <ListItemIcon><HomeIcon /></ListItemIcon>
               <ListItemText primary='Home' />
@@ -178,6 +180,7 @@ class DefaultLayout extends React.Component {
           </List>
           <Divider />
         </Drawer>
+        </ClickAwayListener>
         <main
           className={classNames(classes.content)}
         >
