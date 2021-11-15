@@ -159,7 +159,7 @@ class IndividualReport extends React.Component {
       keywordList: keywordList,
       collection: collection,
       individualRunName: individualRunName,
-      
+
       timeRangeInterviewData: {},
       timeRangeBirthYearData: {},
       keywordCountsData: {},
@@ -264,7 +264,7 @@ class IndividualReport extends React.Component {
       labels: labels,
       datasets: dataSets
     };
-    
+
     this.setState({ keywordsOverTimeData: newData });
   }
 
@@ -315,7 +315,7 @@ class IndividualReport extends React.Component {
         console.log(err);
       });
       this.updateFalseHitsFlaggedPercentages();
-    });    
+    });
   }
 
   // Generates data for the time range graph of interviews

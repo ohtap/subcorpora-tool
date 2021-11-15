@@ -96,7 +96,7 @@ class Collections extends React.Component {
 
   // Opens a modal to add a new row
   askAddRow() {
-    this.setState({ 
+    this.setState({
       addOpen: true,
       currRowId: null,
       currRowName: "",
@@ -161,8 +161,8 @@ class Collections extends React.Component {
   }
 
   askEditRow(id) {
-    this.setState({ 
-      editOpen: true, 
+    this.setState({
+      editOpen: true,
       currRowId: id,
       currRowName: this.state.collections[id]["name"],
       currRowShortenedName: this.state.collections[id]["shortened-name"],

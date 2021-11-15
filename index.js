@@ -66,7 +66,7 @@ var currRun = {
 const port = process.env.PORT || 5000;
 app.listen(port, function() {
 	// Creates a session JSON file if one does not exist and writes to it
-	const rawContents = `{ 
+	const rawContents = `{
 		"keyword-lists": {},
 		"collections": {},
 		"runs": {}

@@ -98,7 +98,7 @@ class SelectKeywords extends React.Component {
 
     this.setState({ menuBody: menuBody });
   }
-  
+
   handleChange = event => {
     this.setState({ selected: event.target.value });
     this.setState({ isButtonDisabled: false });

@@ -115,7 +115,7 @@ class DefaultLayout extends React.Component {
     const { open } = this.state;
 
     return (
-      
+
       <div className={classes.root}>
         <CssBaseline />
         <BrowserRouter>
@@ -135,7 +135,7 @@ class DefaultLayout extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              
+
             </Typography>
           </Toolbar>
         </AppBar>
