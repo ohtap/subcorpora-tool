@@ -122,7 +122,7 @@ class Collections extends React.Component {
       axios.get('/get_collections')
         .then(res => this.setState({ collections: res.data }))
         .then(data => this.updateTable())
-        .then(() => this.uploadFiles())
+        .then(() => this.uploadFiles(this.state.currRowId))
         .catch(err => console.log("Error getting collections (" + err + ")"));
     })
     .catch(function (err) {
@@ -133,8 +133,9 @@ class Collections extends React.Component {
     this.handleAddRowClose();
   }
 
-  uploadFiles() {
+  uploadFiles(collectionId) {
     var data = new FormData();
+    data.append("collectionId", collectionId);
     for (var i = 0; i < this.state.selectedFiles.length; i++) {
       data.append('file', this.state.selectedFiles[i]);
     }
