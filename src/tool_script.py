@@ -419,6 +419,7 @@ def find_keywords(files_for_inclusion, filenames, content, words, included_regex
 	# Loops through each file, looking for keywords, and stores the matches
 	for i in range(len(content)):
 		file = filenames[i]
+		print_message("progress-message", f"Processing file {i+1: 3} / {len(content)}: {file}...")
 		if file not in files_for_inclusion or files_for_inclusion[file] == 0:
 			continue
 
