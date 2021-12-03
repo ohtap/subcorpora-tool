@@ -627,7 +627,7 @@ def main():
 		newKeywordsOverTime[k] = fill_years(newKeywordsOverTime[k], 1)
 	runJSON["summary-report"]["keywords-over-time"] = newKeywordsOverTime
 	for word in newKeywordsOverTime:
-		with open(str(word)+'timeusage.csv', 'w') as csvfile:
+		with open(str(word).replace("*", "(asterisk)")+'timeusage.csv', 'w') as csvfile:
 			data_writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_MINIMAL)
 			for year in newKeywordsOverTime[word]:
 				data_writer.writerow([year, newKeywordsOverTime[word][year]])
