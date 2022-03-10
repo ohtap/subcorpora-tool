@@ -109,9 +109,6 @@ var uploadFunction = function(_type) {
 		},
 		filename: function(req, file, cb) {
 			var filename = file.originalname;
-			if (_type === "metadata") {
-				filename = "metadata" + Date.now() + path.extname(file.originalname);
-			}
 			cb(null, filename);
 		}
 	});
