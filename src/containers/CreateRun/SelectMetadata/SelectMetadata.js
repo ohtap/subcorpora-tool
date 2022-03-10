@@ -139,7 +139,7 @@ class SelectKeywords extends React.Component {
     return (
       <div>
       	<Typography variant='h4'>
-      		Select metadata <br />
+      		Select Interview Metadata
       	</Typography>
       	<br />
       	<Typography paragraph>
