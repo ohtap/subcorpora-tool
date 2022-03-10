@@ -1,6 +1,6 @@
 {
   "name": "ohtap-winnow",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@devexpress/dx-react-chart": "^1.11.2",
