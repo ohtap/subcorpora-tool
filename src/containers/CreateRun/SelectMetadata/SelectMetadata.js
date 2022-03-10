@@ -83,7 +83,7 @@ class SelectKeywords extends React.Component {
     axios.post("/upload_metadata", data, config)
       .then((res) => {
         axios.get("/get_metadata_files")
-          .then(res => this.setState({ metadataFiles: res.data, isButtonDisabled: false }))
+          .then(res => this.setState({ metadataFiles: res.data, isButtonDisabled: false, name: this.state.selectedFile.name }))
           .catch(err => console.log("Error getting metadata files (" + err + ")"));
       })
       .catch(function(err) {
