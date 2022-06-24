@@ -2,20 +2,20 @@
 # otherwise double-counted into counts).
 
 from collections import defaultdict
-from collections import OrderedDict
+#from collections import OrderedDict
 import os
 import pandas as pd
 import re
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+# import nltk
+# from nltk.corpus import stopwords
+# from nltk.tokenize import word_tokenize
 import string
-from unidecode import unidecode
+# from unidecode import unidecode
 import csv
-from bs4 import BeautifulSoup, Tag
+# from bs4 import BeautifulSoup, Tag
 import sys
 import json
-import csv
+#import csv
 
 NUM_TOP_WORDS = 20 # The number of top words that we want from each file
 CONTEXT_WORDS_AROUND = 50
@@ -223,7 +223,7 @@ def get_included_files(collections, df1, df2, runJSON):
 					continue
 
 
-		
+
 
 		# If the current interviewee is non-male and the interview has a male, mark it
 		if f in male_interviews[curr_c]:
@@ -234,7 +234,7 @@ def get_included_files(collections, df1, df2, runJSON):
 		# interviewee we want to add!
 		interviewees_list= r["interviewee_ids"].split(";")
 		for j in interviewees_list:
-			info= interviewee_id_to_metadata[j]
+			info= interviewee_id_to_metadata[j.strip()]
 			if j==0:
 				continue
 			interviewee_name = interviewee_id_to_metadata["interviewee_name"]
@@ -261,7 +261,7 @@ def get_included_files(collections, df1, df2, runJSON):
 			interviewee_metadata_all_collections["race"][curr_person["identified_race"]] += 1
 			interviewee_metadata_all_collections["sex"][curr_person["sex"]] += 1
 			interviewee_metadata_all_collections["birth_country"][curr_person["birth_country"]] += 1
-			
+
 			files_for_inclusion[curr_c][f] = 1
 
 			date_of_first_interview = r["date_of_first_interview"]
@@ -296,7 +296,7 @@ def get_included_files(collections, df1, df2, runJSON):
 	runJSON["summary-report"]["sex"] = interviewee_metadata_all_collections["sex"]
 	runJSON["summary-report"]["education"] = interviewee_metadata_all_collections["education"]
 	runJSON["summary-report"]["birth_country"] = interviewee_metadata_all_collections["birth_country"]
-	
+
 	metadata = {
 		"files_for_inclusion": files_for_inclusion,
 		"people": people,
@@ -419,6 +419,7 @@ def find_keywords(files_for_inclusion, filenames, content, words, included_regex
 	# Loops through each file, looking for keywords, and stores the matches
 	for i in range(len(content)):
 		file = filenames[i]
+		print_message("progress-message", f"Processing file {i+1: 3} / {len(content)}: {file}...")
 		if file not in files_for_inclusion or files_for_inclusion[file] == 0:
 			continue
 
@@ -626,7 +627,7 @@ def main():
 		newKeywordsOverTime[k] = fill_years(newKeywordsOverTime[k], 1)
 	runJSON["summary-report"]["keywords-over-time"] = newKeywordsOverTime
 	for word in newKeywordsOverTime:
-		with open(str(word)+'timeusage.csv', 'w') as csvfile:
+		with open(str(word).replace("*", "(asterisk)")+'timeusage.csv', 'w') as csvfile:
 			data_writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_MINIMAL)
 			for year in newKeywordsOverTime[word]:
 				data_writer.writerow([year, newKeywordsOverTime[word][year]])

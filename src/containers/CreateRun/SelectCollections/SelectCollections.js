@@ -103,7 +103,7 @@ class SelectCollections extends React.Component {
 
     this.setState({ menuBody: menuBody, idsOrder: idsOrder });
   }
-  
+
 
   /* Functions to handle change of the selector */
 

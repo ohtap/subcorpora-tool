@@ -1,6 +1,6 @@
 {
   "name": "ohtap-winnow",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@devexpress/dx-react-chart": "^1.11.2",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.10.4",
+    "cra-build-watch": "^3.4.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.4",
     "react-scripts": "^3.4.3"
@@ -39,7 +40,8 @@
     "eject": "react-scripts eject",
     "s3:create-bucket": "aws s3 mb s3://$BUCKET",
     "s3:configure-bucket": "aws s3 website s3://$BUCKET --index-document index.html --error-document index.html",
-    "s3:upload": "aws s3 sync --acl public-read --sse --delete ./build s3://$BUCKET"
+    "s3:upload": "aws s3 sync --acl public-read --sse --delete ./build s3://$BUCKET",
+    "watch": "cra-build-watch"
   },
   "browserslist": {
     "production": [

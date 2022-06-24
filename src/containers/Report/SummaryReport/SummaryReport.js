@@ -236,7 +236,7 @@ class SummaryReport extends React.Component {
       labels: labels,
       datasets: dataSets
     };
-    
+
     this.setState({ keywordsOverTimeData: newData });
   }
 

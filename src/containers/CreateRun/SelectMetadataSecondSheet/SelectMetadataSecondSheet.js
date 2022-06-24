@@ -82,8 +82,8 @@ class SelectKeywords extends React.Component {
 
     axios.post("/upload_metadata", data, config)
       .then((res) => {
-        axios.get("/get_metadata_files_second")
-          .then(res => this.setState({ metadataFiles: res.data, isButtonDisabled: false }))
+        axios.get("/get_metadata_files")
+          .then(res => this.setState({ metadataFiles: res.data, isButtonDisabled: false, name: this.state.selectedFile.name }))
           .catch(err => console.log("Error getting metadata files (" + err + ")"));
       })
       .catch(function(err) {
@@ -140,7 +140,7 @@ class SelectKeywords extends React.Component {
     return (
       <div>
       	<Typography variant='h4'>
-      		Select metadata <br />
+      		Select Interviewee Metadata
       	</Typography>
       	<br />
       	<Typography paragraph>
