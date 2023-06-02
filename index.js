@@ -153,6 +153,17 @@ app.get("/get_metadata_files", function (req, res) {
 	});
 	res.status(200).send(metadataFiles);
 });
+
+app.get("/get_metadata_files_second", function (req, res) {
+	var metadataFiles = [];
+	var currPath = "./data/metadata-files";
+	fs.readdirSync(currPath).forEach(function(file, index) {
+		if (file !== ".gitkeep") {
+			metadataFiles.push(file);
+		}
+	});
+	res.status(200).send(metadataFiles);
+});
 /** PYTHON PROCESS AND HELPER FUNCTIONS FOR RUNNING SUBCORPORA TOOL **/
 
 /**
@@ -213,6 +224,7 @@ app.post("/choose_metadata", function (req, res) {
 
 	res.sendStatus(200);
 });
+
 
 /**
  * Runs the Python script and maintains communication between the script and our Node backend.
