@@ -72,11 +72,10 @@ class SelectCollections extends React.Component {
       isButtonDisabled: true,
       redirect: false,
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeMultiple = this.handleChangeMultiple.bind(this);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
     this.updateSelection = this.updateSelection.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
     this.renderRedirect = this.renderRedirect.bind(this);
   }
 

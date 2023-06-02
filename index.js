@@ -95,6 +95,7 @@ function saveToSessionFile() {
 }
 
 // Multer upload storage
+//Upload funtion here
 var uploadFunction = function(_type) {
 	var storage = multer.diskStorage({
 		destination: function(req, file, cb) {
@@ -153,6 +154,9 @@ app.get("/get_metadata_files", function (req, res) {
 	});
 	res.status(200).send(metadataFiles);
 });
+
+//Upload function seems to end here
+
 /** PYTHON PROCESS AND HELPER FUNCTIONS FOR RUNNING SUBCORPORA TOOL **/
 
 /**
